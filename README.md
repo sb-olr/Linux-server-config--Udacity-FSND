@@ -4,7 +4,7 @@ The 3rd project for Udacity's FSND (Full Stack Nano Degree). the purpose is to s
 This is the configuration log for the Project 3 for Udacity’s Full Stack Nano Degree (FSND).
 
 
-Server details for user:
+# Server details for user:
 
 Static Ip address: 18.139.119.48
 Web address: http://18.139.119.48
@@ -20,12 +20,12 @@ To connect to server, use a terminal app on your local machine.
 
     ssh grader@18.139.119.48 -p 2200 -i ~/.ssh/grader
 
-Update Packages :
+# Update Packages :
 
     sudo apt-get update
     sudo apt-get upgrade
 
-Software Installed:
+# Software Installed:
 
 ntp:
 sudo apt-get install ntp
@@ -48,14 +48,7 @@ Python-pip:
 virtualenv:
     sudo pip install virtualenv
 
-python-flask:
-
-
-python-flask-sqlalchemy
-python-psycopg2
-
-
-Server setup :
+# Server setup :
 
 After making a Lightsail account, the ssh key can be copied from the user account page.
 
@@ -65,12 +58,12 @@ Log into the server:
     ssh ubuntu@18.139.119.48 -p 2200 -i ~/.ssh/Lightsail.pem
 
 
-Create new user:
+# Create new user:
 Added a new user called ‘grader'
     adduser grader
 Set password to ‘grader'
 
-Grant sudo access to new user:
+# Grant sudo access to new user:
 
     touch /etc/sudoers.d/grader
     nano /etc/sudoers.d/grader
@@ -79,7 +72,7 @@ Grant sudo access to new user:
 Pasted this line to give sudo access  to grader
     grader ALL=(ALL) NOPASSWD:ALL
 
-Configure SSH for New User
+# Configure SSH for New User :
 On the local machine crate a new key pair of RSA key using:
     ssh-keygen -t rsa
 Reference: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
@@ -88,38 +81,39 @@ Rename the keys to grader and grader.pub respectively
 
 Temporarily log in as the newuser:
     sudo su - grader
-Create the .ssh directory and the authorized_keys file:
+
+# Create the .ssh directory and the authorized_keys file:
     cd /home/grader
     mkdir .ssh
     touch .ssh/authorized_keys
     nano .ssh/authorized_keys
 
 Pasted the contents of grader.pub from the local machine
-Set the ssh file permissions:
+# Set the ssh file permissions:
     chmod 700 .ssh
     chmod 644 .ssh/authorized_keys
 test the connection from the local machine in a new terminal window:
     ssh grader@18.139.119.48 -p 2200 -i ~/.ssh/grader
 
-SSH Config :
+# SSH Config :
 change the ssh default port from 22 to 2200 edit the following file :
     sudo nano /etc/ssh/sshd_config
 change  the Port value for 2200
 
-Prevent Root Login :
+# Prevent Root Login :
 Changed the following to no:
     #Authentication:
     PermitRootLogin no
 
-Force ssh login :
+# Force ssh login :
 Changed the following to:
 
     PasswordAuthentication no
 
-Restarted the service:
+# Restarted the service:
     sudo service ssh restart
 
-Configure Firewall :
+# Configure Firewall :
 Configured (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123):    
 
     sudo ufw default deny incoming
@@ -130,19 +124,19 @@ Configured (UFW) to only allow incoming connections for SSH (port 2200), HTTP (p
     sudo ufw status
 
 
-Set Local Timezone :
+# Set Local Timezone :
 Updated timezone to UTC:
     sudo dpkg-reconfigure tzdata
 
-Configure mod_wsgi :
+# Configure mod_wsgi :
 
-Enabled mod_wsgi :
+# Enabled mod_wsgi :
     sudo a2enmod wsgi
 
-Started the apache web server :
+# Started the apache web server :
     sudo service apache2 start
 
-Deploying the App :
+# Deploying the App :
 Use the following command to move to the /var/www directory:
     cd /var/www
     mkdir catalog
@@ -150,7 +144,7 @@ Use the following command to move to the /var/www directory:
     mkdir catalog
     cd catalog
 
-Created the init.py to have the flask application logic:
+# Created the init.py to have the flask application logic:
     sudo nano __init__.py
 
 Added following logic to the file:
@@ -220,5 +214,9 @@ Restarted apache to reflect changes:
     sudo service apache2 reload
     sudo service apache2 restart
 
-Confirm app is served :
+# Confirm app is served :
     View the app : http://18.139.119.48
+
+
+# Reference :
+https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
