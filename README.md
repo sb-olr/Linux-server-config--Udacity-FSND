@@ -113,7 +113,7 @@ Changed the following to no:
 
 Force ssh login :
 Changed the following to:
-# Change to no to disable tunnelled clear text passwords
+
     PasswordAuthentication no
 
 Restarted the service:
