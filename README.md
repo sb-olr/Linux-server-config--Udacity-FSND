@@ -156,20 +156,23 @@ def hello():
 if __name__ == "__main__":
     app.run()
 
-Setup  Flask:
+# Setup Flask :
 
-setup virtual env:
+setup virtual env :
     sudo virtualenv venv
 
 activated the virtual environment with the following command:
     source venv/bin/activate
 
+install Flask :
+      pip install flask packaging oauth2client redis passlib flask-httpauth
+      pip install sqlalchemy flask-sqlalchemy psycopg2 bleach requests 
 
-New Virtual Host
+set up new Virtual Host :
 Ran the following commands to configure the apache sites
     sudo nano /etc/apache2/sites-available/catalog.conf
 
-Added the code:
+Added the code :
 <VirtualHost *:80>
        ServerName 18.139.119.48
        ServerAdmin admin@18.139.119.48
@@ -191,7 +194,7 @@ Added the code:
 Enable the virtual host :
     sudo a2ensite catalog
 
-Create the .wsgi File
+Create the .wsgi File :
 Apache uses the .wsgi file to serve the Flask app.
     cd /var/www/catalog
     sudo nano catalog.wsgi
