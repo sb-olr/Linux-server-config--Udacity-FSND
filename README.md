@@ -221,6 +221,6 @@ Restarted apache to reflect changes:
     View the app : http://18.139.119.48
 
 
-# Reference :
+# Resources :
 https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
