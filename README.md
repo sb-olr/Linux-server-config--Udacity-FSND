@@ -82,7 +82,6 @@ Pasted this line to give sudo access  to grader
 # Configure SSH for New User :
 On the local machine crate a new key pair of RSA key using:
     ssh-keygen -t rsa
-Reference: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 
 Rename the keys to grader and grader.pub respectively
 
@@ -229,5 +228,7 @@ Restarted apache to reflect changes:
 
 
 # Resources :
+https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux
