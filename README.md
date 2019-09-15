@@ -7,7 +7,7 @@ This is the configuration log for the Project 3 for Udacity’s Full Stack Nano 
 # Server details for user:
 
 Static Ip address: 18.139.119.48
-Web address: http://18.139.119.48
+Web address: http://18.139.119.48.xip.io
 Ssh port: 2200
 User: grader
 Password: grader (if needed) 
@@ -19,34 +19,6 @@ To connect to server, use a terminal app on your local machine.
 (First, copy the key provided by email and store it as ~/.ssh/grader in your local machine)
 
     ssh grader@18.139.119.48 -p 2200 -i ~/.ssh/grader
-
-
-# Software Installed:
-
-ntp:
-sudo apt-get install ntp
-
-apache2:
-    sudo apt-get install apache2
-
-libapache2-mod-wsgi:
-    sudo apt-get install libapache2-mod-wsgi python-dev
-
-sqlite3:
-    sudo apt-get sqlite3
-
-postgresql:
-     sudo apt-get postgresql postgresql-contrib
-
-Python-pip:
-    sudo apt-get install python-pip
-
-virtualenv:
-    sudo pip install virtualenv
-
-unattended-upgrades:
-    sudo apt install unattended-upgrades    
-
 
 # Server setup :
 
@@ -68,9 +40,37 @@ Log into the server:
 Made sure motd will show correct status of updates
     sudo /usr/lib/update-notifier/update-motd-updates-available --force
 
+# Software Installed:
+
+ntp:
+    sudo apt-get install ntp
+
+apache2:
+    sudo apt-get install apache2
+
+libapache2-mod-wsgi:
+    sudo apt-get install libapache2-mod-wsgi python-dev
+
+sqlite3:
+    sudo apt-get sqlite3
+
+postgresql:
+     sudo apt-get postgresql postgresql-contrib
+
+python-pip:
+    sudo apt-get install python-pip
+
+virtualenv:
+    sudo pip install virtualenv
+
+unattended-upgrades:
+    sudo apt install unattended-upgrades    
+
 # Created new user:
 Added a new user called ‘grader'
+
     adduser grader
+
 Set password to ‘grader'
 
 # Grant sudo access to new user:
@@ -227,7 +227,7 @@ Restarted apache to reflect changes:
     sudo service apache2 restart
 
 # Confirm app is served :
-    View the app : http://18.139.119.48
+    View the app : http://18.139.119.48.xip.io
 
 
 # Resources :
