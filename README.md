@@ -20,10 +20,6 @@ To connect to server, use a terminal app on your local machine.
 
     ssh grader@18.139.119.48 -p 2200 -i ~/.ssh/grader
 
-# Update Packages :
-
-    sudo apt-get update
-    sudo apt-get upgrade
 
 # Software Installed:
 
@@ -48,6 +44,10 @@ Python-pip:
 virtualenv:
     sudo pip install virtualenv
 
+unattended-upgrades:
+    sudo apt install unattended-upgrades    
+
+
 # Server setup :
 
 After making a Lightsail account, the ssh key can be copied from the user account page.
@@ -57,8 +57,15 @@ This key can be saved in a file called Lightsail.pem in ~/.ssh on the local mach
 Log into the server:
     ssh ubuntu@18.139.119.48 -p 2200 -i ~/.ssh/Lightsail.pem
 
+# Updated Packages:
 
-# Create new user:
+    sudo apt-get update
+    sudo apt-get upgrade
+
+# Enabled automation upgrades:
+    sudo dpkg-reconfigure --priority low unattended-upgrades
+
+# Created new user:
 Added a new user called ‘grader'
     adduser grader
 Set password to ‘grader'
