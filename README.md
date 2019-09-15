@@ -64,6 +64,9 @@ Log into the server:
 
 # Enabled automation upgrades:
     sudo dpkg-reconfigure --priority low unattended-upgrades
+    
+Made sure motd will show correct status of updates
+    sudo /usr/lib/update-notifier/update-motd-updates-available --force
 
 # Created new user:
 Added a new user called ‘grader'
@@ -232,3 +235,4 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux
+https://serverfault.com/questions/262751/update-ubuntu-10-04/262773#262773
